@@ -1,6 +1,6 @@
 # Queen Attack
 
-#### In-class Practice Assignment during Epicodus Coding School, Practice with Branching, Looping, & Other Foundational C# Concepts, 12.07.2020
+#### In-class Practice Assignment during Epicodus Coding School, Practice with Classes, Methods, & Objects, & Other Foundational C# Concepts, 12.07.2020
 
 #### By Danielle Thompson & Ben McFarland
 
@@ -66,25 +66,57 @@ Once the project has been cloned to your computer and you have all the necessary
 
 | Spec                                            | Input                        | Output                        |
 | :---------------------------------------------- | :--------------------------- | :---------------------------- |
-| **Build list of number**    | User enters: 15 | `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15` |
-| **Changes all numbers divisible by 3 to "ping"** | User enters: 15 | `1, 2, ping, 4, 5, ping, 7, 8, ping, 10, 11, ping, 13, 14, ping`|
-| **Changes all numbers divisible by 5 to "pong"**  | User enters: 15 | `1, 2, ping, 4, pong, ping, 7, 8, ping, pong, 11, ping, 13, 14, pong` |
-| **Changes all numbers divisible by 3 AND 5 to "ping-pong"** | User enters: 15 | `1, 2, ping, 4, pong, ping, 7, 8, ping, pong, 11, ping, 13, 14, ping-pong` |
+| ****    | User enters:  |  |
+| **** | User enters:  |  |
+| ****  | User enters:  |  |
+| **** | User enters:  |  |
 
 ### Tests
 
-Describe: buildList(number)
-Test: buildList(userInputNumber).toEqual(a list of #'s up to userInputNumber)
-Expect: buildList(15).toEqual(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+Describe: queenAttack(x, y)
+Test: queenAttack(userInputForQueen).toEqual(x1, y1)
+Test: queenAttack(userInputForOtherPiece).toEqual(x2, y2)
+Expect: queenAttack(x, y).toEqual(attack or naw)
 
-Hints
-When the user submits coordinates, the program should create an instance of a Queen class, with properties for its X and Y coordinates.
-?? Find out how many squares are on a chess board - pre determine range for x & y coordinates. 
-
-The Queen class should have a method that takes X and a Y coordinate as arguments, and returns true if the queen can attack the given space, and false if it cannot.
+Describe: MoveDiagonally()
+((x + 1) && (y + 1)) || ((x - 1) && (y - 1)) || ((x + 1) && (y - 1)) || ((x - 1) && (y + 1))
+if (x +- num) && (y +- num) == 2nd piece coordinates 
 
 
-A message should be displayed to inform the user of the results.
+Describe: MoveHorizontally()
+if y remains same && x +-
+
+Describe: MoveVertically()
+if x remains same && y +-
+
+---------
+(Maybe this is too specific, but at least for reference ...)
+Describe: pieceMoves(x, y)
+
+Can move in ...
+- Knight: "L' shape (2, 1) || (1, 2)
+- King: +-1 Up, down, L, R
+- Rook: Horizontally, or vertically * any number to limit
+- Bishop: Diagonally (x+-1, y+-1)
+- Pawn: +-1 Up
+
+
+Hints:
+- When the user submits coordinates, the program should create an instance of a Queen class, with properties for its X and Y coordinates.
+?? Find out how many squares are on a chess board - pre determine range for x & y coordinates. 8 x 8 (64 total squares). 
+Graph: 16 squares (4x4) per quadrant. 
+-x | x+
+___|____
+-y | y+
+   |
+
+- The Queen class should have a method that takes X and a Y coordinate as arguments, and returns true if the queen can attack the given space, and false if it cannot.
+string queenCoord = Console.ReadLine(x, y)
+string pieceCoord = Console.ReadLine(x2, y2)
+QueenAttack(Console.WriteLine(T/F))
+
+- A message should be displayed to inform the user of the results.
+Console.WriteLine(results)
 
 ## Known bugs
 
@@ -92,4 +124,4 @@ No known bugs as of now.
 
 ### Legal, or License
 
-_MIT_ Copyright (c) 2020 *_Danielle Thompson, Ben McFarland_**
+_MIT_ Copyright (c) 2020 **_Danielle Thompson, Ben McFarland_**
